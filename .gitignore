@@ -1,0 +1,14 @@
+# IDEA project files
+*.eml
+*.ipr
+*.iws
+*.iml
+
+reports
+target
+build
+test-output
+var
+out
+.gradle
+.idea
