@@ -1,6 +1,5 @@
 package com.solncev.controller;
 
-import com.solncev.dto.UserDto;
 import com.solncev.model.User;
 import com.solncev.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
