@@ -1,9 +1,12 @@
 package com.solncev.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity(name = "groups")
+@Data
 public class Group {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,12 +17,4 @@ public class Group {
 
     @ManyToMany(mappedBy = "groups")
     private List<User> users;
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getId() {
-        return id;
-    }
 }

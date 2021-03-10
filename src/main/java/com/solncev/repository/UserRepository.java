@@ -11,7 +11,7 @@ import java.util.Collection;
 import java.util.List;
 
 public interface UserRepository extends CrudRepository<User, Integer> {
-    List<User> getAllByEmail(String email);
+    User findByEmail(String email);
 
     @Query("select u from User u where u.name = 'Ivan'")
     Collection<User> findAllIvanUser();

@@ -1,8 +1,11 @@
 package com.solncev.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
+@Data
 public class Gadget {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,12 +17,4 @@ public class Gadget {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "owner_id")
     private User owner;
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getId() {
-        return id;
-    }
 }

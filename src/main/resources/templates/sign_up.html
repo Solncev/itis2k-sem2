@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+</head>
+<body>
+<div container text-center>
+    <div>
+        <h2>Sign Up Form</h2>
+    </div>
+    <div class="form-group row">
+        <form method="post" th:action="@{/sign_up}" th:object="${user}">
+            <div class="form-group row">
+                <label class="col-form-label col-sm-2">Name:</label>
+                <input type="text" th:field="*{name}" required minlength="1" maxlength="64">
+            </div>
+            <div class="m-5 form-group row">
+                <label>Lastname:</label>
+                <input type="text" th:field="*{lastname}" required minlength="1" maxlength="64">
+            </div>
+            <div class="form-group row">
+                <label>E-mail:</label>
+                <input type="email" th:field="*{email}" required minlength="5" maxlength="100">
+            </div>
+            <div class="form-group row">
+                <label>Password:</label>
+                <input type="password" th:field="*{password}" required minlength="8" maxlength="64">
+            </div>
+            <div class="col-5">
+                <button type="submit" class="btn-primary">Sign Up</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
